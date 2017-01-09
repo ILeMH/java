@@ -1,0 +1,11 @@
+package garage;
+
+public class VitreElectrique implements Option{
+
+	double prix = 60;
+	
+	public Double getPrix() {
+		return this.getPrix();
+	}
+
+}

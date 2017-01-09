@@ -1,0 +1,19 @@
+package garage;
+
+public class Moteur {
+
+	TypeMoteur type;
+	String cylinde;
+	Double prix;
+	
+	Moteur (String cylinde, Double prix)
+	{
+		this.cylinde = cylinde;
+		this.prix = prix;
+	}
+	
+	public String toString()
+	{
+		return "Moteur : "+type+" "+cylinde+" chevaux ("+prix+"€)";
+	}
+}

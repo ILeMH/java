@@ -1,0 +1,17 @@
+package garage;
+import java.util.ArrayList;
+
+public class garage {
+	ArrayList<Vehicule> voitures;
+	
+	public String toString()
+	{
+		String garage = "******************\nGarage Openclassroom\n************";
+		String vcl = null;
+		for(Vehicule v: voitures)
+		{
+			vcl = vcl + v.toString();
+		}
+		return garage+vcl;
+	}
+}

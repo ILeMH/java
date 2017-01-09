@@ -1,0 +1,10 @@
+package garage;
+
+public class MoteurHybride extends Moteur{
+
+	MoteurHybride(Double prix) {
+		super(cylinde, prix);
+
+	}
+
+}

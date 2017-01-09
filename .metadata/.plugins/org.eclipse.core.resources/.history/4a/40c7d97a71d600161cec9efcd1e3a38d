@@ -1,0 +1,11 @@
+package garage;
+
+public class Climatisation implements Options{
+
+	double prix = 70;
+	
+	public double getprix()
+	{
+		return this.prix;
+	}
+}

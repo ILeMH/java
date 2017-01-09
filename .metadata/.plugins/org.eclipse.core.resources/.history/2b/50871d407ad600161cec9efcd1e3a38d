@@ -1,0 +1,12 @@
+package garage;
+
+public class GPS implements Option {
+
+	double prix = 110;
+	
+	public Double getPrix() {
+
+		return this.prix;
+	}
+
+}

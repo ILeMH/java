@@ -1,0 +1,19 @@
+package garage;
+
+public enum Marque {
+	Reno,
+	PIGEOT,
+	TROEN;
+	
+	private String name = "";
+	
+	Marque(String name)
+	{
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return name;
+	}
+}

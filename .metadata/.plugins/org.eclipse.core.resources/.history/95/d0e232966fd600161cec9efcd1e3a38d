@@ -1,0 +1,22 @@
+package garage;
+
+import java.util.ArrayList;
+
+public class Vehicule {
+	
+	Double prix;
+	String nom;
+	ArrayList<Option> options;
+	Marque nomMarque;
+	
+	public String toString()
+	{
+		String op = null;
+		for(option v:options)
+		{
+			op=op+v;
+		}
+		return "********************\nGarage *Openclassroom*\n***************"+
+	this.nom+this.nomMarque+this.prix+op;
+	}
+}

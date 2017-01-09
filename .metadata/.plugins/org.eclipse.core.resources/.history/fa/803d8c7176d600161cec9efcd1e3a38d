@@ -1,0 +1,48 @@
+package garage;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Vehicule {
+	
+	Double prix;
+	String nom;
+	ArrayList<Option> options;
+	Marque nomMarque;
+	Moteur moteur;
+	
+	public String toString()
+	{
+		String op = null;
+		for(Option v:options)
+		{
+			op=op+v;
+		}
+		return this.nom+this.nomMarque+this.prix+op;
+	}
+	
+	public void addOption(Option option)
+	{
+		this.options.add(option);
+	}
+	
+	public Marque getMarque()
+	{
+		return this.nomMarque;
+	}
+	
+	public List<Option> getOption()
+	{
+		return this.options;
+	}
+	
+	public Double getPrix()
+	{
+		return this.prix;
+	}
+	
+	public Moteur getmoteur()
+	{
+		return this.moteur;
+	}
+}

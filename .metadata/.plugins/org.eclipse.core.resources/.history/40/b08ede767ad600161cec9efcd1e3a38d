@@ -1,0 +1,12 @@
+package garage;
+
+public class BarreDeToit implements Option {
+	
+	double prix = 120;
+	
+	public Double getPrix()
+	{
+		return this.prix;
+	}
+
+}

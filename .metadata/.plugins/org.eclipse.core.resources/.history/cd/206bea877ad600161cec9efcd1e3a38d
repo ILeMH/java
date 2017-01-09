@@ -1,0 +1,11 @@
+package garage;
+
+public class SiegeChauffant implements Option{
+
+	double prix = 200;
+	
+	public Double getPrix()
+	{
+		return this.prix;
+	}
+}

@@ -1,0 +1,16 @@
+package garage;
+import java.util.ArrayList;
+
+public class garage {
+	ArrayList<Vehicule> voitures;
+	
+	public String toString()
+	{
+		String ve = null;
+		for(Vehicule v: voitures)
+		{
+			ve=v.toString()+("\n");
+		}
+		return ve;
+	}
+}

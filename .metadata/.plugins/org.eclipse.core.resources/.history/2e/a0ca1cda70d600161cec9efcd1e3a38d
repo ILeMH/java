@@ -1,0 +1,6 @@
+package garage;
+
+public interface Option {
+	
+	double prix;
+}
