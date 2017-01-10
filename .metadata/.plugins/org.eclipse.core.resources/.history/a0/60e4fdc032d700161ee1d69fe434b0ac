@@ -1,0 +1,67 @@
+
+import Garages.Garage;
+import Moteurs.*;
+import Options.BarreDeToit;
+import Options.Climatisation;
+import Options.Gps;
+import Options.SiegeChauffant;
+import Options.VitreElectrique;
+import Vehicules.A300B;
+import Vehicules.D4;
+import Vehicules.Laguna;
+import Vehicules.Vehicule;
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Garage garage=new Garage();
+		 garage.affichage();
+		 
+		 Vehicule lag1 = new Laguna();
+	   	 lag1.setMoteur(new MoteurEssence("150 Chevaux", 10256d));
+	   	 lag1.addOption(new Gps());
+	   	 lag1.addOption(new VitreElectrique());
+	   	 lag1.addOption(new SiegeChauffant());
+	   	 
+	   	 Vehicule A300B_2 = new A300B();
+	   	 A300B_2.setMoteur(new MoteurElectrique("1500 W", 1234d));
+	   	 A300B_2.addOption(new Climatisation());
+	   	 A300B_2.addOption(new BarreDeToit());
+	   	 A300B_2.addOption(new SiegeChauffant());
+	   	   	 
+	   	 Vehicule d4_1 = new D4();
+	   	 d4_1.setMoteur(new MoteurDiesel("200 Hdi", 25684.80d));
+	   	 d4_1.addOption(new BarreDeToit());
+	   	 d4_1.addOption(new Climatisation());
+	   	 d4_1.addOption(new Gps());
+	   	    	    	 
+	   	 Vehicule lag2 = new Laguna();
+	   	 lag2.setMoteur(new MoteurDiesel("500 Hdi", 456987d));
+	   	   	 
+	   	 Vehicule A300B_1 = new A300B();
+	   	 A300B_1.setMoteur(new MoteurHybride("ESSENCE/Electrique", 12345.95d));
+	   	 A300B_1.addOption(new VitreElectrique());
+	   	 A300B_1.addOption(new BarreDeToit());
+	   	 
+	   	 
+	   	 Vehicule d4_2 = new D4();
+	   	 d4_2.setMoteur(new MoteurElectrique("100 KW", 1224d));
+	   	 d4_2.addOption(new SiegeChauffant());
+	   	 d4_2.addOption(new BarreDeToit());
+	   	 d4_2.addOption(new Climatisation());
+	   	 d4_2.addOption(new Gps());
+	   	 d4_2.addOption(new VitreElectrique());
+	   
+		 garage.addVoiture(d4_1);
+		 garage.addVoiture(d4_2);
+		 garage.addVoiture(lag2);
+		 garage.addVoiture(A300B_1);
+		 garage.ecritureDansFichier();
+		 
+		
+		
+		
+
+	}
+
+}

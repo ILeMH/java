@@ -1,0 +1,11 @@
+
+public class VitreElectrique implements Option {
+	
+	static public double prx = 212.35;
+	
+	public Double getPrix() {
+		return VitreElectrique.prx;
+	}
+
+	
+}

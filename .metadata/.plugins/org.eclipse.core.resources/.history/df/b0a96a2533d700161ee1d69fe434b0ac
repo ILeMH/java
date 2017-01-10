@@ -1,0 +1,48 @@
+package com.lejus.metier;
+
+import java.io.Serializable;
+
+import com.lejus.enums.TypeMoteur;
+
+public class Moteur implements Serializable{
+	//Attributs en protected pour être utilisés par les filles
+	protected String cylindre;
+	protected double prix;
+	//Enumération du TypeMoteur. C'est le moteur instancié par setMoteur qui va donner le type.
+	protected TypeMoteur type;
+	public Moteur(String cylindre, double prix) {
+		super();
+		this.cylindre = cylindre;
+		this.prix = prix;
+		this.type = TypeMoteur.D1;
+	}
+	public Moteur() {
+		this("1 L",10000);
+	}
+	public String getCylindre() {
+		return cylindre;
+	}
+	public void setCylindre(String cylindre) {
+		this.cylindre = cylindre;
+	}
+	public double getPrix() {
+		return prix;
+	}
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+	
+	public TypeMoteur getType() {
+		return type;
+	}
+	public void setType(TypeMoteur type) {
+		this.type = type;
+	}
+	public String toString() {
+		return "Moteur "+ type + " "+ cylindre +" "+"("+prix + "€ )";
+	}
+	
+	
+	
+
+}

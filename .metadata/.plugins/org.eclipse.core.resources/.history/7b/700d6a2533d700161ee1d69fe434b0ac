@@ -1,0 +1,20 @@
+package com.lejus.enums;
+
+public enum TypeMoteur {
+	D1("Diesel"),
+	E1("Essence"),
+	H1("Hybride"),
+	E2("Electrique");
+	
+	private String carburant;
+	
+	TypeMoteur(String carburant){
+		this.carburant = carburant;
+	}
+	
+	public String toString(){
+		return carburant;
+	}
+	
+
+}

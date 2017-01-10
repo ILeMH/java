@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Garage {
+	protected List<Vehicule> voitures;
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		for (Vehicule s : voitures)
+			{
+			    sb.append("+ Voiture " + s.nomMarque + " : " + s.nom + " " + s.moteur.toString() + " (" + s.moteur.getPrix() + ")"  );
+			    sb.append("\n" );
+			}
+		return sb.toString();
+	}
+	
+	public Garage(){
+		this.voitures = new ArrayList<Vehicule>();
+	}
+	
+	public void addVoiture(Vehicule voit){
+		this.voitures.add(voit);
+	}	
+	
+}

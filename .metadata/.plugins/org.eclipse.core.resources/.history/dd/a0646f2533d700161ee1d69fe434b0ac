@@ -1,0 +1,26 @@
+package com.lejus.metier.modeles;
+
+import java.util.Set;
+
+import com.lejus.enums.Marque;
+import com.lejus.metier.Moteur;
+import com.lejus.metier.Vehicule;
+import com.lejus.metier.inter.Option;
+
+public class P5008 extends Vehicule {
+
+	public P5008() {
+		super();
+		marque = Marque.P1;
+		nom = "5008";
+	}
+
+	public P5008(Moteur moteur, Set<Option> options, Marque marque, String nom, double prix) {
+		super(moteur, options, marque, nom, prix);
+		marque= Marque.P1;
+		nom = "5008";
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

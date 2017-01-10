@@ -1,0 +1,26 @@
+package com.lejus.metier.modeles;
+
+import java.util.Set;
+
+import com.lejus.enums.Marque;
+import com.lejus.metier.Moteur;
+import com.lejus.metier.Vehicule;
+import com.lejus.metier.inter.Option;
+
+public class Laguna extends Vehicule {
+
+	public Laguna() {
+		super();
+		marque = Marque.R1;
+		nom = "Laguna";
+	}
+
+	public Laguna(Moteur moteur, Set<Option> options, Marque marque, String nom, double prix) {
+		super(moteur, options, marque, nom, prix);
+		marque= Marque.R1;
+		nom = "Laguna";
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

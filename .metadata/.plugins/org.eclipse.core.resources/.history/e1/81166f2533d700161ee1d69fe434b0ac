@@ -1,0 +1,26 @@
+package com.lejus.metier.modeles;
+
+import java.util.Set;
+
+import com.lejus.enums.Marque;
+import com.lejus.metier.Moteur;
+import com.lejus.metier.Vehicule;
+import com.lejus.metier.inter.Option;
+
+public class Insignia extends Vehicule {
+
+	public Insignia() {
+		super();
+		marque = Marque.O1;
+		nom = "Insignia";
+	}
+
+	public Insignia(Moteur moteur, Set<Option> options, Marque marque, String nom, double prix) {
+		super(moteur, options, marque, nom, prix);
+		marque = Marque.O1;
+		nom = "Insignia";
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

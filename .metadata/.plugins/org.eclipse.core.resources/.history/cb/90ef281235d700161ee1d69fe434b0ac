@@ -1,0 +1,12 @@
+
+public class SiegeChauffant implements Option {
+	
+	static public double prx = 562.9;
+	
+	public Double getPrix() {
+		return SiegeChauffant.prx;
+	}
+	
+	
+	
+}

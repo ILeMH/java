@@ -1,0 +1,111 @@
+//Les importations et le package conteneur
+package com.lejus.metier;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+//La classe Garage implémente sérialisable pour pouvoir être enregistré
+public class Garage implements Serializable {
+	// Attributs
+	// Contient une List de véhicules
+	private List<Vehicule> vehicules;
+
+	// Constructeur par défaut
+	public Garage() {
+		// On déclare un ObjectInputStream
+		ObjectInputStream ois = null;
+		
+		try {
+			// On ouvre un flux de lecture sur garage.txt
+			ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(new File("garage.txt"))));
+			try {
+				this.vehicules = ((Garage) ois.readObject()).getVehicules();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+
+			ois.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Le fichier n'a pas encore été crée mais il va l'être à l'ajout de la première voiture");
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		}
+		System.out.println("Instanciation du garage!");
+		// Sécurité anti NullPointerException
+		if (vehicules == null) {
+			// List est une interface, donc on instancie la classe Arraylist qui
+			// implémente List
+			this.vehicules = new ArrayList<Vehicule>();
+		}
+
+	}
+
+	// Constructeur avec paramètres
+	public Garage(List<Vehicule> vehicules) {
+		super();
+		this.vehicules = vehicules;
+	}
+
+	// Getters et Setters
+	public List<Vehicule> getVehicules() {
+		return vehicules;
+	}
+
+	// Pour Ajouter un véhicule, on utilisera la méthode add() d'ArrayList.
+
+	public void setVehicules(List<Vehicule> vehicules) {
+		this.vehicules = vehicules;
+	}
+
+	public void addVehicule(Vehicule v) {
+		vehicules.add(v);
+		ObjectOutputStream oos;
+		try {
+			oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("garage.txt"))));
+			oos.writeObject(this);
+			oos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	public String toString() {
+		String str = "******************************************\n\tGarage\n******************************************\n";
+		if (vehicules.isEmpty()) {
+			str += "Garage Vide!\n";
+		} else {
+			for (Vehicule v : vehicules) {
+				str += v.toString();
+				str += "\n";
+			}
+
+		}
+		return str;
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.lejus.metier;
+
+import com.lejus.enums.TypeMoteur;
+
+public class MoteurHybride extends Moteur {
+
+	
+	
+	public MoteurHybride() {
+		super();
+		type = TypeMoteur.H1;
+		// TODO Auto-generated constructor stub
+	}
+
+	public MoteurHybride(String cylindre, double prix) {
+		super(cylindre, prix);
+		type = TypeMoteur.H1;
+		// TODO Auto-generated constructor stub
+	}
+
+	public TypeMoteur getType() {
+		return TypeMoteur.H1;
+	}
+	
+}

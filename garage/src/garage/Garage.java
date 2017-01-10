@@ -1,7 +1,8 @@
 package garage;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Garage {
+public class Garage implements Serializable {
 	ArrayList<Vehicule> voitures;
 	
 	Garage()

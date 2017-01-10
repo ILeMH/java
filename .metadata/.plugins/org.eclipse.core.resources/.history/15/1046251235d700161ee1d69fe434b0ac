@@ -1,0 +1,11 @@
+
+public class GPS implements Option {
+	
+	static private double prx = 113.5;
+	
+	public Double getPrix() {
+		return GPS.prx;
+	}
+
+	
+}

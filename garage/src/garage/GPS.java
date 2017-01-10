@@ -1,6 +1,8 @@
 package garage;
 
-public class GPS implements Option {
+import java.io.Serializable;
+
+public class GPS implements Option, Serializable {
 
 	String name;
 	

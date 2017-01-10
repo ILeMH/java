@@ -1,0 +1,19 @@
+package com.lejus.metier.inter.impl;
+
+import com.lejus.metier.inter.Option;
+
+public class SiegeCuir implements Option {
+	
+	
+	public double getPrix() {
+		return 420.63;
+
+	}
+
+	
+	public String getNom() {
+		return "Sièges en cuir véritable";
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.lejus.metier.inter.impl;
+
+import com.lejus.metier.inter.Option;
+
+public class SiegeChauffant implements Option {
+	
+
+	public double getPrix() {
+		return 310.49;
+
+	}
+
+
+	public String getNom() {
+		return "Sièges Chauffants";
+
+	}
+
+}

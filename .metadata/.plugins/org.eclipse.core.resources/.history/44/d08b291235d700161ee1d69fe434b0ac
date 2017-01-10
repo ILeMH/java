@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.List;
+
+abstract class Vehicule {
+	protected Double prix;
+	protected String nom;
+	protected Marque nomMarque;
+	protected List<Option> options;
+	protected Moteur moteur;
+	
+	
+	protected Vehicule(){
+		this.prix = null;
+		this.options = new ArrayList<Option>();
+	}
+	
+	public String toString(){
+		String str = "Allo";
+		return str;
+		
+	}
+	
+	protected void addOption(Option opt){
+		this.options.add(opt);
+	}
+	
+	protected Marque getMarque(){
+		return this.nomMarque;
+	}
+	
+	protected List<Option> getOptions(){
+		return this.options;
+	}
+	
+	protected Double getPrix(){
+		return this.prix;
+	}
+	 
+	protected Moteur setMoteur(Moteur mtr){
+		return this.moteur = mtr;
+	}
+	
+}

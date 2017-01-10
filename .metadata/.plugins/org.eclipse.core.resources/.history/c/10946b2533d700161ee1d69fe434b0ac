@@ -1,0 +1,81 @@
+//Package et importations
+package com.lejus.metier;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.lejus.enums.Marque;
+import com.lejus.metier.inter.Option;
+//La classe Véhicule
+public class Vehicule implements Serializable {
+	//Attributs
+	private Moteur moteur;
+	//Un set d'option pour éviter les doublons en options
+	private Set<Option> options;
+	//Une énumération de marques Marque, modifiable par les classes héritées
+	protected Marque marque;
+	//Le modèle du véhicule modifiable par les classes héritées
+	protected String nom;
+	//Le prix total du véhicule à modifier par une somme.
+	private double prix; 
+	
+	
+	//Constructeur par défaut
+	public Vehicule() {
+		//On ne peut pas instancier Set mais une classe HashSet qui l'implémente
+		this(new Moteur(),new HashSet<Option>(), Marque.R1, "Twingo", 12000);
+	}
+	
+	//Constructeur avec paramètres
+	public Vehicule(Moteur moteur, Set<Option> options, Marque marque, String nom, double prix) {
+		super();
+		this.moteur = moteur;
+		this.options = options;
+		this.marque = marque;
+		this.nom = nom;
+		this.prix = prix;
+	}
+	//Getters et Setters
+	
+	public Moteur getMoteur() {
+		return moteur;
+	}
+
+	public void setMoteur(Moteur moteur) {
+		this.moteur = moteur;
+	}
+
+	public double getPrix(){
+		double p = 0.0;
+		
+		p=moteur.getPrix();
+		for(Option o:options)
+		{
+			p+=o.getPrix();
+		}
+		
+		return p;
+	}
+	//toString polymorphé 
+	public String toString() {
+		String str;
+		str = marque+" "+nom+ " avec " + moteur + ", Options : [ ";
+		//Pour l'affichage des options
+		for(Option o:options)
+		{
+			str+= o.getNom() + " ( "+o.getPrix() + " € ) ";
+		}
+		//On concatène le reste
+		str+= "] à "+ this.getPrix() + "€";
+		return  str;
+	}
+	//La méthode d'ajout des options:
+	public void addOption(Option option)
+	{
+		options.add(option);
+	}
+	
+	
+
+}

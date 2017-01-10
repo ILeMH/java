@@ -1,0 +1,23 @@
+
+abstract class Moteur{
+	protected String cylindre;
+	protected Double prix;
+	protected TypeMoteur type;
+	
+	protected Moteur(String cylindre, Double prix){
+		this.cylindre = cylindre;
+		this.prix = prix;
+	}
+		
+	public String toString(){
+		String str = type.toString() + " " + this.cylindre;
+		return str;
+	
+	}
+	
+	public Double getPrix(){
+		return prix;
+	}
+	
+}
+	

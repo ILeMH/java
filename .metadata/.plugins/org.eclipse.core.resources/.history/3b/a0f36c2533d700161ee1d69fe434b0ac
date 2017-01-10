@@ -1,0 +1,19 @@
+package com.lejus.metier.inter.impl;
+
+import com.lejus.metier.inter.Option;
+
+public class Gps implements Option {
+	
+
+	public double getPrix() {
+		return 379.99;
+
+	}
+
+
+	public String getNom() {
+		return "GPS Garmin Striker";
+
+	}
+
+}

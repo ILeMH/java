@@ -1,0 +1,30 @@
+package Moteurs;
+
+import java.io.Serializable;
+
+public class Moteur implements Serializable {
+	TypeMoteur typeMoteur;// type de moteur
+	private String cylindre;//cylindre de la voiture
+	private double prix;//prix du modele
+	
+	//initialisation 
+	public Moteur (String cylindre,double prix)
+	{
+		this.cylindre=cylindre;
+		this.prix=prix;
+	}
+	// prix de la voiture 
+	public double getPrix()
+	{
+		return this.prix;
+	}
+	
+	  public String toString()
+	  {
+		  String str;
+		  str ="Moteur "+ typeMoteur.getTypeMoteur()+" "+this.cylindre/*+
+		  " ( "+getPrix()+"€ )"*/;
+		  return str;
+		   
+	  }
+}

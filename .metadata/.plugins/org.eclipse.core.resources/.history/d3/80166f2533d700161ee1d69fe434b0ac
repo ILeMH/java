@@ -1,0 +1,26 @@
+package com.lejus.metier.modeles;
+
+import java.util.Set;
+
+import com.lejus.enums.Marque;
+import com.lejus.metier.Moteur;
+import com.lejus.metier.Vehicule;
+import com.lejus.metier.inter.Option;
+
+public class Corsa extends Vehicule {
+	//	Une voiture avec laquelle j'ai eu un accident de moto OMG
+	public Corsa() {
+		super();
+		marque = Marque.O1;
+		nom = "Corsa";
+	}
+
+	public Corsa(Moteur moteur, Set<Option> options, Marque marque, String nom, double prix) {
+		super(moteur, options, marque, nom, prix);
+		marque = Marque.O1;
+		nom = "Corsa";
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

@@ -1,0 +1,11 @@
+
+public class BarreDeToit implements Option {
+	
+	static public double prx = 29.9;
+	
+	public Double getPrix() {
+		return BarreDeToit.prx;
+	}
+
+	
+}

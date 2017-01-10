@@ -1,0 +1,54 @@
+package com.lejus.principal;
+
+
+import com.lejus.metier.Garage;
+
+import com.lejus.metier.MoteurDiesel;
+import com.lejus.metier.MoteurElectrique;
+import com.lejus.metier.MoteurEssence;
+import com.lejus.metier.MoteurHybride;
+import com.lejus.metier.Vehicule;
+import com.lejus.metier.inter.impl.BarreDeToit;
+import com.lejus.metier.inter.impl.Climatisation;
+import com.lejus.metier.inter.impl.Gps;
+import com.lejus.metier.inter.impl.SiegeChauffant;
+import com.lejus.metier.inter.impl.SiegeCuir;
+import com.lejus.metier.inter.impl.VitreElectrique;
+import com.lejus.metier.modeles.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//Instanciation du garage
+		Garage g = new Garage();
+		//Affichage du garage
+		System.out.println(g);
+
+		// TODO Auto-generated method stub
+		//Premier véhicule
+		Vehicule v = new Laguna();
+		v.setMoteur(new MoteurEssence());
+		v.addOption(new Gps());
+		v.addOption(new SiegeChauffant());
+		v.addOption(new BarreDeToit());
+		g.addVehicule(v);
+		
+		//Deuxième véhicule
+		Vehicule v1 = new Insignia();
+		v1.setMoteur(new MoteurElectrique("500 kw", 30000));
+		v1.addOption(new SiegeCuir());
+		v1.addOption(new VitreElectrique());
+		v1.addOption(new Climatisation());
+		g.addVehicule(v1);
+		
+		//Troisième véhicule
+		Vehicule v2 = new P5008();
+		v2.setMoteur(new MoteurHybride());
+		v2.addOption(new VitreElectrique());
+		g.addVehicule(v2);
+		
+		//Affichage du garage
+		System.out.println(g);
+	}
+
+}

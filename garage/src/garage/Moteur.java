@@ -1,6 +1,8 @@
 package garage;
 
-public abstract class Moteur {
+import java.io.Serializable;
+
+public abstract class Moteur implements Serializable {
 
 	protected TypeMoteur type;
 	protected String cylindre;

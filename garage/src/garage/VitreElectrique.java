@@ -1,6 +1,8 @@
 package garage;
 
-public class VitreElectrique implements Option{
+import java.io.Serializable;
+
+public class VitreElectrique implements Option, Serializable{
 
 	String name;
 	

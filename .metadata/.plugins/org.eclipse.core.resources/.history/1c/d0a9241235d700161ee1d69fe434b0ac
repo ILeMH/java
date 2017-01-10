@@ -1,0 +1,11 @@
+
+public class Climatisation implements Option {
+	
+	static public double prx = 347.3;
+	
+	public Double getPrix() {
+		return Climatisation.prx;
+	}
+
+	
+}

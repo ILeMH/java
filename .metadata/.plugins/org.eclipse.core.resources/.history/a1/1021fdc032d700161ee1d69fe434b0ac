@@ -1,0 +1,18 @@
+package Options;
+
+import java.io.Serializable;
+
+public class Climatisation implements Options, Serializable
+{
+	
+	double gps=347.3;
+
+	public double getPrix()
+	{
+		return gps;
+	}
+	public String getNomOption()
+	{
+		return "Climatisation";
+	}
+}

@@ -1,0 +1,19 @@
+package com.lejus.metier.inter.impl;
+
+import com.lejus.metier.inter.Option;
+
+public class VitreElectrique implements Option {
+	
+
+	public double getPrix() {
+		return 325.47;
+
+	}
+
+
+	public String getNom() {
+		return "Vitres électriques";
+
+	}
+
+}

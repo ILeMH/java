@@ -1,0 +1,18 @@
+package Options;
+
+import java.io.Serializable;
+
+public class Gps implements Options, Serializable
+{
+	
+	double gps=113.5;
+
+	public double getPrix()
+	{
+		return gps;
+	}
+	public String getNomOption()
+	{
+		return "GPS";
+	}
+}

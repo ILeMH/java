@@ -1,0 +1,129 @@
+package Garages;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+import java.util.Vector;
+import Vehicules.*;
+public class Garage 
+{
+	private   List <Vehicule>voitures=new Vector<Vehicule>();//Liste de voitures 
+	private File garage=new File("garage.txt");//fichier objet
+	private ObjectInputStream ois; //flux de lecture d'objet
+    private ObjectOutputStream oos; //flux ecriture d'objet
+ 	private String str="";//Variable qui va stocker le text qui sera affiche
+ 	
+ 	//initialisation avec sauvegade du fichier garage  dans un tableau dynamique
+ 	public Garage()
+ 	{
+ 		lectureDuFichier();
+ 	}
+	
+//ajout de voitures dans un tableau dynamique
+	public void addVoiture(Vehicule voit)
+	{		
+		voitures.add(voit);
+	}
+	
+	//ecriture dans le fichier 
+	public void ecritureDansFichier()
+	{ 		
+		try
+		{
+			oos = new ObjectOutputStream(
+		              new BufferedOutputStream(
+		                new FileOutputStream(garage)));
+		oos.writeObject(voitures);	//ecriture objet voiture dans le fichier 
+		oos.close();
+		
+		}
+		catch (FileNotFoundException e) 
+		{
+		      e.printStackTrace();
+		} 
+		catch (IOException e) 
+		{
+		      e.printStackTrace();
+		}  	
+	}
+	
+	//lire le fichier
+	@SuppressWarnings("unchecked")
+	public void lectureDuFichier() 
+	{
+	
+		try
+		{	
+			ois = new ObjectInputStream(
+					new BufferedInputStream(		              
+		               new  FileInputStream(garage)));		
+				try
+				
+				{	//lecture du tableau Vehicule situe  dans le fichier garage
+						 voitures=(List<Vehicule>)ois.readObject();	
+				}
+				
+				catch (ClassNotFoundException e)
+				{		
+					e.printStackTrace();
+				} 
+				
+				finally 
+				{
+					ois.close();
+				}	
+		}
+				
+		//fichier de sauvegarde inexistant: gestion de l'erreur	
+		catch (FileNotFoundException e) 
+		{
+			
+		} 
+		//fichier vide gestion de l'erreur 
+		catch (EOFException e)
+		{
+			System.out.println("Aucune voiture sauvegardée !\n"+"*****************************"
+					+"\n"+"*   Garage OpenClassrooms   *"+"\n"
+					+"*****************************");
+			
+		}
+		catch (IOException e) 
+		{
+		      e.printStackTrace();
+		}  		
+	}
+	
+	public String  toString()
+	{
+		for (int i=0; i<voitures.size();i++)
+		{
+		str+=voitures.get(i).toString()+"\n";	
+		
+		}
+		//si le garage est vide je ne retourne aucune information sinon je renvoie le contenu du fichier
+		if (str=="")
+		return str;	
+		else 
+			return "*****************************"
+			+"\n"+"*   Garage OpenClassrooms   *"+"\n"
+			+"*****************************\n"+str;
+		
+	}
+	//affichage des voitures dans le garage
+	public void  affichage()
+	
+	{
+		
+		System.out.print(toString());			
+	}
+
+	
+}

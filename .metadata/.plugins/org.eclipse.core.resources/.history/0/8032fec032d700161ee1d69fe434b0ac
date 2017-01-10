@@ -1,0 +1,11 @@
+package Vehicules;
+
+public class A300B extends Vehicule{ 
+	
+	public A300B ()
+	{
+		marque=Marque.PIGEOT; 
+		prix=28457.0;
+	}
+	
+}

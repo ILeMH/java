@@ -1,0 +1,18 @@
+package com.lejus.enums;
+
+public enum Marque {
+	R1("RENAULT"),
+	C1("CITROEN"),
+	P1("PEUGEOT"),
+	O1("OPEL");
+	
+	private String libelle;
+	
+	Marque (String libelle){
+		this.libelle=libelle;
+	}
+	
+	public String toString(){
+		return libelle;
+	}
+}

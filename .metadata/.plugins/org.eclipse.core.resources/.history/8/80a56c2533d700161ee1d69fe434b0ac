@@ -1,0 +1,19 @@
+package com.lejus.metier.inter.impl;
+
+import com.lejus.metier.inter.Option;
+
+public class Climatisation implements Option {
+	
+
+	public double getPrix() {
+		return 274.69;
+
+	}
+
+
+	public String getNom() {
+		return "Climatisation";
+
+	}
+
+}

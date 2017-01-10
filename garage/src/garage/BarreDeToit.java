@@ -1,6 +1,8 @@
 package garage;
 
-public class BarreDeToit implements Option {
+import java.io.Serializable;
+
+public class BarreDeToit implements Option, Serializable {
 	
 	String name;
 	

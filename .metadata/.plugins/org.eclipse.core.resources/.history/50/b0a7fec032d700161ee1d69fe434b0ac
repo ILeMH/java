@@ -1,0 +1,72 @@
+package Vehicules;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Vector;
+import Moteurs.*;
+import Options.*;
+
+public class Vehicule implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	protected  double prix;//prix du vehicule 
+	private  List<Options> option =new Vector<Options>();// liste des options
+	protected Marque marque;//marque de la voiture
+	private Moteur moteur; //type de moteur 
+	
+	//retourne la marque de la voiture issue de la liste d'enumeration 
+	public String getMarque()
+	{
+		return marque.getMarque();
+	}
+	//retourne le prix de la voiture  pour  chaque categorie
+	public double getPrix()
+	{
+		return prix;
+	}
+	//ajout des options au vehicule 
+	public void addOption (Options op)
+	{
+		option.add(op);
+	}
+	//definir le type demoteur du vehicule
+	public void setMoteur(Moteur moteur)
+	{
+		this.moteur=moteur;
+	}
+	
+	//recuperer la liste  des options du vehicule 
+	public List<Options> getOptions()
+	{
+		return this.option;
+	}
+	//
+	public String toString()
+	{
+	  String strNomOption="";//nom des options
+		double totalOption=0;// total des options 
+		double valTotal;//valeur total options +valeur vehicule 
+		String virgule="";
+		int i=0;//compteur 
+	
+	//recuperations des differentes options prix et designation
+		for (Options  options:getOptions())
+		{
+			// test afin d'eviter de placer une virgule apres la derniere option
+			if ( i<getOptions().size()-1)
+			{
+				i++;
+				virgule=", ";
+			}
+			totalOption+=options.getPrix();
+			strNomOption+=options.getNomOption()+" ("+options.getPrix()+"€)"+virgule;		
+			virgule="";
+		}
+		valTotal=totalOption+getPrix();// addition en valeur  de toutes les options 
+		String str="Voiture "+marque+": "+this.getMarque()+" "+this.moteur.toString()+" ("+getPrix()+"€)" +"[" +strNomOption+"] d'une valeur totale de "
+				+valTotal+"€";
+		return str;
+	}
+	
+}

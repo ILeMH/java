@@ -1,0 +1,12 @@
+package com.lejus.metier.inter;
+
+import java.io.Serializable;
+
+public interface Option extends Serializable{
+	
+	public double getPrix();
+	public String getNom();
+	
+	
+
+}

@@ -1,0 +1,16 @@
+
+public enum Marque {
+	RENO("Reno"),
+	PIGEOT("Pigeot"),
+	TROEN("Troen");
+	
+	private String name = "";
+   
+	Marque(String name){
+	   this.name = name;
+	}
+   
+	public String toString(){
+		return name;
+	}
+}

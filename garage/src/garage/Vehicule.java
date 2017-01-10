@@ -1,9 +1,10 @@
 package garage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vehicule {
+public class Vehicule implements Serializable {
 	
 	Double prix;
 	String nom;

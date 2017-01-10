@@ -1,0 +1,6 @@
+package Options;
+public interface Options  {
+
+	double getPrix();
+	String getNomOption();
+}
