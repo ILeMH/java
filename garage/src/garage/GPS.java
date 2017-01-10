@@ -8,7 +8,7 @@ public class GPS implements Option {
 	
 	GPS()
 	{
-		this.name = this.getClass().getName();
+		this.name = "GPS";
 	}
 	
 	public Double getPrix() {

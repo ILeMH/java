@@ -14,7 +14,7 @@ public abstract class Moteur {
 	
 	public String toString()
 	{
-		return "Moteur : "+type+" "+cylindre+"("+ prix+"€)";
+		return "Moteur "+type+" "+cylindre+"("+ prix+"€)";
 	}
 	
 	public Double getPrix()

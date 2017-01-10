@@ -13,12 +13,17 @@ public class Vehicule {
 	
 	public String toString()
 	{
-		String op = null;
+		String op = "[";
+		double prix = 0;
 		for(Option v:options)
 		{
-			op=op+v;
+			op+=" ";
+			op+=v.getClass().getSimpleName()+"("+v.getPrix()+")"+" ";
+			prix += v.getPrix();
 		}
-		return this.nom+this.nomMarque+this.prix+op;
+		op+="]";
+		prix+=moteur.getPrix();
+		return "Voiture "+nomMarque+" : "+this.nom+" "+this.moteur+op+" prix total : "+prix;
 	}
 	
 	public void addOption(Option option)
@@ -47,7 +52,7 @@ public class Vehicule {
 	}
 
 	public void setMoteur(Moteur moteur) {
-		this.moteur=moteur;		
+		this.moteur=moteur;
 	}
 
 

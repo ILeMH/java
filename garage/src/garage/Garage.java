@@ -4,20 +4,19 @@ import java.util.ArrayList;
 public class Garage {
 	ArrayList<Vehicule> voitures;
 	
+	Garage()
+	{
+		this.voitures = new ArrayList<Vehicule>();
+	}
+	
 	public String toString()
 	{
-		String garage = "******************\nGarage Openclassroom\n************";
-		String vcl = null;
-		try{
-			for(Vehicule v: voitures)
-			{
-				vcl = vcl + v.toString();
-			}
-		}catch (Exception e) {
-			vcl = "Aucune voiture dans le garage !";
-			return vcl+"\n"+garage;
+		String garage = "*********************\nGarage Openclassroom\n*******************";
+		for(Vehicule v : voitures)
+		{
+			garage+="\n"+v.toString();
 		}
-		return garage+"\n"+vcl;
+		return garage;
 	}
 	
 

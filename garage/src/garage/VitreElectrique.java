@@ -12,7 +12,7 @@ public class VitreElectrique implements Option{
 	}
 	
 	public Double getPrix() {
-		return this.getPrix();
+		return this.prix;
 	}
 
 }

@@ -8,7 +8,7 @@ public class SiegeChauffant implements Option{
 	
 	SiegeChauffant()
 	{
-		this.name = this.getClass().getName();
+		this.name = "Siège chauffant";
 	}
 	
 	public Double getPrix()
